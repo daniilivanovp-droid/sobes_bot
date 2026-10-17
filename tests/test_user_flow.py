@@ -82,7 +82,7 @@ async def test_next_question_gives_another_question(tg, storage):
     _, q1, q2 = seed(storage)
     await tg.send(USER_ID, "/start")
     first = (await tg.click(USER_ID, "Spark")).text
-    second = (await tg.click(USER_ID, "Следующий вопрос")).text
+    second = (await tg.click(USER_ID, "Пропустить")).text
     assert q1.text in first + second and q2.text in first + second
 
 
